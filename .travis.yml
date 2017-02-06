@@ -1,6 +1,5 @@
 language: java
 install:
--maven install
+	- maven install
 jdk:
--oraclejdk8
-
+	- oraclejdk8
