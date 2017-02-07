@@ -75,10 +75,10 @@ public class AddressbookUI extends UI {
         filter.addTextChangeListener(e -> refreshContacts(e.getText()));
         
         taskList.setContainerDataSource(new BeanItemContainer<>(Task.class));
-        taskList.setColumnOrder("firstName", "lastName", "subject");
+        taskList.setColumnOrder("firstName", "lastName", "subject","start","end");
         taskList.removeColumn("id");
-        taskList.removeColumn("end");
-        taskList.removeColumn("start");
+       // taskList.removeColumn("end");
+       // taskList.removeColumn("start");
         taskList.setSelectionMode(Grid.SelectionMode.SINGLE);
         taskList.addSelectionListener(
                 e -> taskForm.edit((Task) taskList.getSelectedRow()));
@@ -129,7 +129,7 @@ public class AddressbookUI extends UI {
 
     private void refreshContacts(String stringFilter) {
     	taskList.setContainerDataSource(new BeanItemContainer<>( Task.class, service.findAll(stringFilter)));
-    	taskList.setVisible(false);
+    	taskList.setVisible(true);
     }
 
     /*
