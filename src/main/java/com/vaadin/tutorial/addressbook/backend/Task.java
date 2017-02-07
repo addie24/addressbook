@@ -13,14 +13,14 @@ import java.util.Date;
  */
 // Backend DTO class. This is just a typical Java backend implementation
 // class and nothing Vaadin specific.
-public class Contact implements Serializable, Cloneable {
+public class Task implements Serializable, Cloneable {
 
     private Long id;
 
     private String firstName = "";
     private String lastName = "";
-    private String Task = "";
-    private String email = "";
+   // private String Task = "";
+    private String subject = "";
     private Date start;
     private Date end;
 
@@ -47,7 +47,7 @@ public class Contact implements Serializable, Cloneable {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
+/*
     public String getTask() {
         return Task;
     }
@@ -55,13 +55,14 @@ public class Contact implements Serializable, Cloneable {
     public void setTask(String task) {
         this.Task = task;
     }
+    */
 
-    public String getEmail() {
-        return email;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
     public Date getStart() {
         return start;
@@ -78,9 +79,9 @@ public class Contact implements Serializable, Cloneable {
     }
 
     @Override
-    public Contact clone() throws CloneNotSupportedException {
+    public Task clone() throws CloneNotSupportedException {
         try {
-            return (Contact) BeanUtils.cloneBean(this);
+            return (Task) BeanUtils.cloneBean(this);
         } catch (Exception ex) {
             throw new CloneNotSupportedException();
         }
@@ -88,8 +89,8 @@ public class Contact implements Serializable, Cloneable {
 
     @Override
     public String toString() {
-        return "Contact{" + "id=" + id + ", firstName=" + firstName
-                + ", lastName=" + lastName + ", Task=" + Task + ", Start Date=" + start+ ", End Date="+end+'}';
+        return "Task{" + "id=" + id + ", firstName=" + firstName
+                + ", lastName=" + lastName + ", Task=" + subject+ ", Start Date=" + start+ ", End Date="+end+'}';
     }
 
 }
