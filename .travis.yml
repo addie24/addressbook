@@ -3,4 +3,11 @@ install:
 - mvn install
 jdk:
 - oraclejdk8
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: ieXxNWK4jzwcnJwBqjtkufasgYZ+G2rjMwAjfhP5vU5fc46xr5iX5TWpNXAMUUcrJslBowswVfHqTdWxFsMKHHi1nORTBIDii8qSaBUoopS0eq2g+tM/jz/bjD/ZrYp7RLeGNnsTnai7/P9vWqgsbvq4AtRKw9nWoHT3IfZAjfbU+gzTLjWwmAzdVViiYDqHlbN9k7rHe/i8U5SUW33plsSXPjdSzV6p+c8ahLLkQsHz6RrzJGTx1TCXWSoDBFl2achwBAHTuC1EHDY60dbe1k0v3kvbNFBfCx2ITEfT9ZzTyFEIUIpTQCSx6S/wqXmeemv5iBa3agvWQPlfvmRmHBHSkTEiJ10O50Ip6JSKESwHhoy10xniHPAM24Nj81M3DRGtwYKPPeBj6l+o/yAQrBX6u4eP2UqNxINxsyPN6ehCixz8P59MLoKwQJUptPv8fWyPEPogqslPpARat3jIq/k/agIadAKUsNfeOBl4kugSu5vDVgybIz7UEDoDGdo/lil1JiNFGyRNDY8ns70rABOGtmeKcJXNT1j+vI0HPZ1egbsdlVlARKmHvZEc9y8D0f4YGF/p+ArqBRr9wRG/PT21+LpwfzZSy6qIaei7JyrK1QiRBCBM73kEL1t37oYC/xLgrjSLjMRNUN+GR0qHCOBGIJuA/7/eQ4DVYzgm918=
+  app: addy-addressbook
+  on:
+    repo: addie24/addressbook
+    branch: todo_tasks
